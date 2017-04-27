@@ -31,3 +31,5 @@ A Starter Kit (yet Another) which gives you Node and React+Redux Capabilities wi
 - `tcomb-forms` for building forms
 - `firebase` interaction
 - `mocha` and `enzyme` based view layer tests
+- `superagent` to fetch data from `Youtube Data API`
+- `google` auth
