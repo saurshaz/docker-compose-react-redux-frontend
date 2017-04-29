@@ -50,7 +50,7 @@ export default class ClipsListSection extends Component {
       modal: true,
       videoStyle: {
         position: 'fixed',
-        marginTop: '65%',
+        marginTop: '15%',
         float: 'left',
         marginRight: '45%',
         height: BIG_SCREEN_HEIGHT || element.snippet.thumbnails.high.height,
@@ -93,7 +93,9 @@ export default class ClipsListSection extends Component {
           <div style={this.state.videoStyle}>
             <section style={{ display: ((this.state.modal === true) ? 'block' : 'none') }}>
               <iframe
+                height={this.state.videoStyle.height}
                 src={this.state.selectedUrl}
+                width={this.state.videoStyle.width}
               />
               <Tooltip
                 label="Close"
