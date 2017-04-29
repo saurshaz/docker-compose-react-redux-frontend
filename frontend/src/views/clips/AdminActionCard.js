@@ -53,8 +53,6 @@ export default class AdminActionCard extends Component {
         <FloatingActionButton style={iconStyles} >
           <ContentDelete />
         </FloatingActionButton>
-
-        <div />
       </Tooltip>
     </div>);
   }

@@ -5,6 +5,11 @@
     "linebreak-style": [0, "unix"],
     "no-debugger": [1],
     "no-restricted-syntax": [1],
+    "react/jsx-no-bind": [1, {
+      "ignoreRefs": true,
+      "allowArrowFunctions": true,
+      "allowBind": true
+    }],
     "fp/no-mutation": [0, {
       "commonjs": true,
       "allowThis": true,
