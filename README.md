@@ -33,3 +33,15 @@ A Starter Kit (yet Another) which gives you Node and React+Redux Capabilities wi
 - `mocha` and `enzyme` based view layer tests
 - `superagent` to fetch data from `Youtube Data API`
 - `google` auth
+
+
+#### TODOs
+- [ ] add modal for video being played
+- [ ] add disqus thread using in modal
+- [ ] add search-bar to search videos
+- [ ] add sidebar to show related videos
+- [ ] better player view(non-standard YT)
+- [ ] cropping functionality via UI
+- [ ] show profile information using google user
+- [ ] make authentication must
+- [ ] better UI

@@ -10,12 +10,14 @@ import ContentDelete from 'material-ui/svg-icons/content/remove';
 import Tooltip from '../../components/Tooltip';
 import '../../assets/commonStyles/index.css';
 
-const BIG_SCREEN_HEIGHT = 400;
-const BIG_SCREEN_WIDTH = 579;
+const BIG_SCREEN_HEIGHT = 350;
+const BIG_SCREEN_WIDTH = 479;
 
 const iconStyles = {
   marginRight: 24,
 };
+// const styleDisplayValue = { display: 'none' };
+
 
 export default class ClipsListSection extends Component {
 
@@ -44,15 +46,16 @@ export default class ClipsListSection extends Component {
     });
   }
 
-  handlePlayMe(element) {
+  handlePlayMe(e, element, event) {
     this.setState({
       selectedUrl: `http://www.youtube.com/embed/${element.id.videoId}`,
       modal: true,
       videoStyle: {
         position: 'fixed',
-        marginTop: '15%',
+        marginBottom: event.nativeEvent.offsetY,
         float: 'left',
         marginRight: '45%',
+        // marginLeft: '15%',
         height: BIG_SCREEN_HEIGHT || element.snippet.thumbnails.high.height,
         width: BIG_SCREEN_WIDTH || element.snippet.thumbnails.high.width,
       },
@@ -75,7 +78,7 @@ export default class ClipsListSection extends Component {
             <header>
               <h5>{(element.snippet.title)}</h5> <i>{(element.snippet.publishedAt)}</i>
             </header>
-            <Card onClick={this.handlePlayMe.bind(this, element)}>
+            <Card onClick={this.handlePlayMe.bind(this, event, element)}>
               <img
                 alt={element.snippet.title}
                 src={(element.snippet.thumbnails.medium.url)}
@@ -88,6 +91,8 @@ export default class ClipsListSection extends Component {
         arrayOfItems.push(thisItem);
       });
 
+      // styleDisplayValue.display = (this.state.modal === true) ? 'block' : 'none';
+
       return (
         <Paper style={{ width: '100%', margin: '4%' }} >
           <div style={this.state.videoStyle}>
@@ -99,6 +104,7 @@ export default class ClipsListSection extends Component {
               />
               <Tooltip
                 label="Close"
+                onClick={this.handleClosePlayer.bind(this)}
               >
                 <FloatingActionButton
                   style={iconStyles}
