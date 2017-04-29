@@ -3,6 +3,7 @@
 import { PropTypes, Component } from 'react';
 import Paper from 'material-ui/Paper';
 import LinearProgress from 'material-ui/LinearProgress';
+import Subheader from 'material-ui/Subheader';
 import Card from 'material-ui/Card';
 import '../../assets/commonStyles/index.css';
 export default class ClipsListSection extends Component {
@@ -24,16 +25,18 @@ export default class ClipsListSection extends Component {
         const thisItem = (
           <Card
             key={index}
-            style={{ width: '100%' }}
+            style={{ width: '90%', margin: '2%' }}
           >
-            <b>{(element.snippet.title)}</b>
-            <p>{(element.snippet.publishedAt)}</p>
-            <br />
-            <p>{(element.snippet.description)}</p>
+            <header>
+              <h5>{(element.snippet.title)}</h5> <i>{(element.snippet.publishedAt)}</i>
+            </header>
+
             <img
               alt={element.snippet.title}
               src={(element.snippet.thumbnails.medium.url)}
+              style={{ align: 'center' }}
             />
+            <Subheader>{element.snippet.description}</Subheader>
           </Card>
         );
 
@@ -41,7 +44,7 @@ export default class ClipsListSection extends Component {
       });
 
       return (
-        <Paper>
+        <Paper style={{ width: '100%', margin: '4%' }}>
           {arrayOfItems}
         </Paper>);
     }
@@ -57,7 +60,7 @@ export default class ClipsListSection extends Component {
 
 ClipsListSection.propTypes = {
   actions: PropTypes.object,
-  term: PropTypes.String,
+  term: PropTypes.string,
   user: PropTypes.object,
   videos: PropTypes.object,
 };

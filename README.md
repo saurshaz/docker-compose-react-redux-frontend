@@ -1,5 +1,5 @@
 #############################################################
-## Dockerized,Reacting,WebPackedReduxed,Firebased    ##
+## Dockerized,Reacting,Reduxed,WebPacked,Firebased         ##
 #############################################################
 
 
