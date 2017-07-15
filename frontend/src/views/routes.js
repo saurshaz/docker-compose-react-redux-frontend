@@ -22,7 +22,6 @@ export default function Routes(store) {
     >
       <IndexRoute
         component={Clips}
-        onEnter={checkAdmin}
       />
       <Route
         component={Layout}

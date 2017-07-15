@@ -1,7 +1,7 @@
 
 
 /* eslint no-console: "off" */
-const webpackConfigs = require('./config/webpack');
+const webpackConfigs = require('./wp-config/webpack');
 
 const defaultConfig = 'dev';
 
